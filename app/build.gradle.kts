@@ -36,6 +36,8 @@ dependencies {
     implementation(Dependencies.rxJava)
     implementation(Dependencies.rxAndroid)
 
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.okhttpInterceptor)
     implementation(Dependencies.Retrofit.retrofit2)
     implementation(Dependencies.Retrofit.converterMoshi)
     implementation(Dependencies.Retrofit.adapterRxJava)

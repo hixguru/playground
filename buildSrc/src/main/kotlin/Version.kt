@@ -4,6 +4,7 @@ object Version {
     const val coreKtx = "1.1.0"
     const val constraintLayout = "1.1.3"
     const val koin = "2.0.1"
+    const val okhttp = "4.2.1"
     const val retrofit = "2.6.2"
 
     const val rxAndroid = "2.1.1"

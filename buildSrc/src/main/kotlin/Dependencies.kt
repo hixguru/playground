@@ -12,6 +12,9 @@ object Dependencies {
     const val rxJava = "io.reactivex.rxjava2:rxjava:${Version.rxJava}"
     const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Version.rxAndroid}"
 
+    const val okhttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
+    const val okhttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp}"
+
     object Retrofit {
         const val retrofit2 = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
         const val converterMoshi =
