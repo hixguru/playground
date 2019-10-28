@@ -27,6 +27,7 @@ android {
             isEnabled = true
         }
 
+        buildConfigField("String", "END_POINT", "\"https://jsonplaceholder.typicode.com/\"")
     }
 
     buildTypes {
