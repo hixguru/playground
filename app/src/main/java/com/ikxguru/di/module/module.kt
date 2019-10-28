@@ -4,7 +4,7 @@ import com.ikxguru.BuildConfig
 import com.ikxguru.remote.Remote
 import com.ikxguru.repo.Repo
 import com.ikxguru.repo.RepoImpl
-import com.ikxguru.view.MainViewModel
+import com.ikxguru.view.posts.PostsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.viewmodel.dsl.viewModel
@@ -43,6 +43,6 @@ val appModule = module {
     }
 
     viewModel {
-        MainViewModel(get())
+        PostsViewModel(get())
     }
 }
