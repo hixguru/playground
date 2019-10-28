@@ -1,7 +1,11 @@
 object Version {
     const val coroutine = "1.3.2"
     const val kotlin = "1.3.50"
+
+    const val material = "1.0.0"
     const val appCompat = "1.1.0"
+    const val recyclerview = "1.0.0"
+
     const val coreKtx = "1.1.0"
     const val constraintLayout = "1.1.3"
     const val koin = "2.0.1"

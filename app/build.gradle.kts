@@ -42,7 +42,10 @@ dependencies {
     implementation(kotlin("stdlib-jdk8", Version.kotlin))
     implementation(Dependencies.coroutine)
 
+    implementation(Dependencies.material)
     implementation(Dependencies.appCompat)
+    implementation(Dependencies.recyclerview)
+
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.constraintlayout)
 

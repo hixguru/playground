@@ -1,6 +1,10 @@
 object Dependencies {
     const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"
+
+    const val material = "com.google.android.material:material:${Version.material}"
     const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
+    const val recyclerview = "androidx.recyclerview:recyclerview:${Version.recyclerview}"
+
     const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
     const val constraintlayout =
         "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
