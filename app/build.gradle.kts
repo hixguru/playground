@@ -32,5 +32,18 @@ dependencies {
     implementation(Dependencies.appCompat)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.constraintlayout)
+
+    implementation(Dependencies.rxJava)
+    implementation(Dependencies.rxAndroid)
+
+    implementation(Dependencies.Retrofit.retrofit2)
+    implementation(Dependencies.Retrofit.converterMoshi)
+    implementation(Dependencies.Retrofit.adapterRxJava)
+
+    implementation(Dependencies.koin)
+    implementation(Dependencies.koinExt)
+    implementation(Dependencies.koinScope)
+    implementation(Dependencies.koinViewModel)
+
     testImplementation(Dependencies.Test.junit)
 }
