@@ -17,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+        }
     }
 
     buildTypes {
@@ -29,9 +34,19 @@ android {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8", Version.kotlin))
+    implementation(Dependencies.coroutine)
+
     implementation(Dependencies.appCompat)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.constraintlayout)
+
+    implementation(Dependencies.Lifecycle.viewModel)
+    implementation(Dependencies.Lifecycle.viewModelKtx)
+    implementation(Dependencies.Lifecycle.extensions)
+    implementation(Dependencies.Lifecycle.liveData)
+    implementation(Dependencies.Lifecycle.liveDataKtx)
+    implementation(Dependencies.Lifecycle.runtime)
+    implementation(Dependencies.Lifecycle.runtimeKtx)
 
     implementation(Dependencies.rxJava)
     implementation(Dependencies.rxAndroid)
