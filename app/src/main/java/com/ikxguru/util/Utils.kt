@@ -5,6 +5,13 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.squareup.moshi.Moshi
+
+val moshi = Moshi.Builder().build()
+
+fun <T> Moshi.fromJson(cls: Class<T>, json: String): T? {
+    return moshi.adapter<T>(cls::class.java).fromJson(json)
+}
 
 fun <T : ViewDataBinding> bind(
     inflater: LayoutInflater,

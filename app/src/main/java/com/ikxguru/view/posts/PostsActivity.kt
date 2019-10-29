@@ -8,6 +8,7 @@ import com.ikxguru.base.BaseBindingActivity
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityPostsBinding
 import com.ikxguru.ext.observe
+import com.ikxguru.ext.toast
 import com.ikxguru.view.detail.DetailActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -37,8 +38,9 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
     }
 
     private fun observeState() {
-        observe(vm.state) {
-            adapter.submitList(it.posts)
+        observe(vm.failure) { error ->
+            error ?: return@observe
+            toast(error.message)
         }
     }
 
