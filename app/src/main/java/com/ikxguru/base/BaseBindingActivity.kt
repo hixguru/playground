@@ -15,11 +15,8 @@ abstract class BaseBindingActivity<B : ViewDataBinding> : AppCompatActivity() {
         binding = (bind(getLayoutId()) as B).apply {
             lifecycleOwner = this@BaseBindingActivity
         }
-        loadInitialData()
     }
 
     @LayoutRes
     abstract fun getLayoutId(): Int
-
-    abstract fun loadInitialData()
 }

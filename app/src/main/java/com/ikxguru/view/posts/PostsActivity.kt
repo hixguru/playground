@@ -24,20 +24,20 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
 
     override fun getLayoutId(): Int = R.layout.activity_posts
 
-    override fun loadInitialData() {
-        lifecycleScope.launchWhenCreated { vm.loadInitialPosts() }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initView()
 
+        loadInitialData()
         observe(vm.isLoading) { isLoading ->
             adapter.setLoading(isLoading)
         }
         observeViewEvents()
         observeError()
+    }
+
+    private fun loadInitialData() {
+        lifecycleScope.launchWhenCreated { vm.loadInitialPosts() }
     }
 
     private fun observeViewEvents() {
