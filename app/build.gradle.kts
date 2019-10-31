@@ -42,6 +42,10 @@ android {
     }
 }
 
+androidExtensions {
+    isExperimental = true
+}
+
 dependencies {
     implementation(kotlin("stdlib-jdk8", Version.kotlin))
     implementation(Dependencies.coroutine)
