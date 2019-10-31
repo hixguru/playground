@@ -10,22 +10,29 @@
             type="com.ikxguru.data.Post" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
         tools:context=".view.detail.DetailActivity">
 
         <TextView
             android:id="@+id/tvTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{post.title}" />
+            android:text="@{post.title}"
+            tools:text="Title" />
 
         <TextView
             android:id="@+id/tvBody"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{post.body}" />
+            android:layout_marginTop="8dp"
+            android:text="@{post.body}"
+            tools:text="body" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
 </layout>
