@@ -1,15 +1,18 @@
 package com.ikxguru.repo
 
+import com.ikxguru.base.Result
 import com.ikxguru.data.Post
 import com.ikxguru.ext.toResult
 import com.ikxguru.remote.Remote
-import com.ikxguru.base.Response as MappedResponse
 
 class RepoImpl(
     private val remote: Remote
 ) : Repo {
 
-    override suspend fun fetchPosts(): MappedResponse<List<Post>> {
-        return remote.fetchPosts().toResult()
+    override suspend fun fetchPosts(
+        start: Int,
+        limit: Int
+    ): Result<List<Post>> {
+        return remote.fetchPosts(start, limit).toResult()
     }
 }

@@ -1,9 +1,12 @@
 package com.ikxguru.repo
 
-import com.ikxguru.base.Response
+import com.ikxguru.base.Result
 import com.ikxguru.data.Post
 
 interface Repo {
 
-    suspend fun fetchPosts(): Response<List<Post>>
+    suspend fun fetchPosts(
+        start: Int,
+        limit: Int
+    ): Result<List<Post>>
 }

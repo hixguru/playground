@@ -1,16 +1,16 @@
 package com.ikxguru.base
 
-sealed class Response<T>(@Transient open val code: Int) {
+sealed class Result<T>(@Transient open val code: Int) {
 
     data class Success<T>(
         override val code: Int,
         val data: T
-    ) : Response<T>(code)
+    ) : Result<T>(code)
 
     data class Failure<T>(
         override val code: Int,
         val error: ErrorResponse
-    ) : Response<T>(code)
+    ) : Result<T>(code)
 
     fun <R> fold(
         success: (Success<out T>) -> R,

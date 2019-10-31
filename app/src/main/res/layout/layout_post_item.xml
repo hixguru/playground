@@ -9,7 +9,7 @@
             type="com.ikxguru.data.Post" />
 
         <variable
-            name="onClickPostListener"
+            name="listener"
             type="com.ikxguru.view.posts.OnClickPostListener" />
 
     </data>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
-        android:onClick="@{() -> onClickPostListener.onClickPostListener(post)}"
+        android:onClick="@{() -> listener.onClickPost(post)}"
         android:padding="16dp">
 
         <TextView
@@ -35,6 +35,7 @@
             tools:text="Title" />
 
         <TextView
+            android:id="@+id/tvBody"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
