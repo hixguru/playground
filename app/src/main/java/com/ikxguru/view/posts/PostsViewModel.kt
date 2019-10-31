@@ -73,14 +73,14 @@ class PostsViewModel(
             repo.fetchPosts(start, limit)
                 .fold({ success ->
                     val cachedPosts = state.successOrNull()?.posts ?: emptyList()
-                    val updated = state.successOrNull()?.copy(
+                    state.successOrNull()?.copy(
                         loading = false,
                         posts = cachedPosts + success.data
                     ) ?: Success(false, success.data)
-                    _state.postValue(updated)
                 }, { failure ->
-                    _state.postValue(Failure(failure.error.message))
+                    Failure(failure.error.message)
                 })
+                .let(_state::postValue)
         }
     }
 

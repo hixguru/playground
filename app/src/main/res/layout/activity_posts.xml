@@ -21,15 +21,8 @@
             android:layout_height="match_parent"
             app:items="@{vm.success.posts}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:loading="@{vm.success.loading}"
             tools:context=".view.posts.PostsActivity" />
-
-        <androidx.core.widget.ContentLoadingProgressBar
-            style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminate="true"
-            app:goneUnless="@{vm.success.loading}" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
