@@ -60,6 +60,7 @@ dependencies {
     implementation(Dependencies.Lifecycle.viewModel)
     implementation(Dependencies.Lifecycle.viewModelKtx)
     implementation(Dependencies.Lifecycle.extensions)
+    implementation(Dependencies.Lifecycle.liveDataCore)
     implementation(Dependencies.Lifecycle.liveData)
     implementation(Dependencies.Lifecycle.liveDataKtx)
     implementation(Dependencies.Lifecycle.runtime)
@@ -79,5 +80,9 @@ dependencies {
     implementation(Dependencies.koinScope)
     implementation(Dependencies.koinViewModel)
 
+    testImplementation(Dependencies.Test.archTesting)
     testImplementation(Dependencies.Test.junit)
+    testImplementation(Dependencies.Test.mockito)
+    testImplementation(Dependencies.Test.kluent)
+    testImplementation(Dependencies.Test.coroutine)
 }

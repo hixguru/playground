@@ -13,9 +13,12 @@ object Version {
     const val retrofit = "2.6.2"
 
     const val lifecycle = "2.2.0-rc01"
+    const val liveDataKtx = "1.1.1"
 
     const val rxAndroid = "2.1.1"
     const val rxJava = "2.2.13"
 
     const val junit = "4.12"
+    const val kluent = "1.4"
+    const val mockito = "3.1.0"
 }

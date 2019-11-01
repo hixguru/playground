@@ -17,6 +17,7 @@ object Dependencies {
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Version.lifecycle}"
         const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
         const val extensions = "androidx.lifecycle:lifecycle-extensions:${Version.lifecycle}"
+        const val liveDataCore = "androidx.lifecycle:lifecycle-livedata-core:${Version.lifecycle}"
         const val liveData = "androidx.lifecycle:lifecycle-livedata:${Version.lifecycle}"
         const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
         const val runtime = "androidx.lifecycle:lifecycle-runtime:${Version.lifecycle}"
@@ -37,6 +38,11 @@ object Dependencies {
     }
 
     object Test {
+        const val archTesting = "androidx.arch.core:core-testing:2.1.0"
         const val junit = "junit:junit:${Version.junit}"
+        const val mockito = "org.mockito:mockito-core:${Version.mockito}"
+        const val kluent = "org.amshove.kluent:kluent:${Version.kluent}"
+        const val kluentAndroid = "org.amshove.kluent:kluent-android:${Version.kluent}"
+        const val coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutine}"
     }
 }
