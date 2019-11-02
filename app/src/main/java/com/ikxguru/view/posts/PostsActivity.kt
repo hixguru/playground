@@ -29,9 +29,7 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
         initView()
 
         loadInitialData()
-        observe(vm.isLoading) { isLoading ->
-            adapter.setLoading(isLoading)
-        }
+        observe(vm.isLoading, adapter::setLoading)
         observeViewEvents()
         observeError()
     }
