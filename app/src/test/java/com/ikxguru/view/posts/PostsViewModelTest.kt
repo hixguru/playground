@@ -40,7 +40,7 @@ class PostsViewModelTest : BaseTest() {
         vm = PostsViewModel(repo)
         vm.loadInitialPosts()
 
-        val actual = vm.success.getOrAwaitValues()
+        val actual = vm.success.getOrAwaitValues(2)
 
         actual shouldEqual expected
     }
