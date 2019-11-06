@@ -4,8 +4,10 @@ import com.ikxguru.BuildConfig
 import com.ikxguru.remote.Remote
 import com.ikxguru.repo.Repo
 import com.ikxguru.repo.RepoImpl
+import com.ikxguru.view.posts.PostsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
@@ -39,4 +41,7 @@ val appModule = module {
     single<Repo> {
         RepoImpl(get())
     }
+
+    viewModel { PostsViewModel(get()) }
+
 }
