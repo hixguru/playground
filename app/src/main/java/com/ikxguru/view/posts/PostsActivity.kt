@@ -20,7 +20,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostListener {
 
     private val vm: PostsViewModel by viewModel()
-    private val adapter by lazy { PostsAdapter(this) }
+    private val adapter by lazy { PostsAdapter(this, lifecycle) }
 
     override fun getLayoutId(): Int = R.layout.activity_posts
 

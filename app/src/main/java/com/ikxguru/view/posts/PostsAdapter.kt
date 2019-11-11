@@ -2,6 +2,7 @@ package com.ikxguru.view.posts
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -17,7 +18,8 @@ enum class ViewType(resId: Int) {
 }
 
 class PostsAdapter(
-    private val postListener: OnClickPostListener
+    private val postListener: OnClickPostListener,
+    private val lifecycle: Lifecycle
 ) : ListAdapter<Post, ViewHolder>(diffCallback) {
 
     private var isLoading: Boolean? = null
@@ -35,12 +37,24 @@ class PostsAdapter(
         return when (viewType) {
             ViewType.ITEM.ordinal -> {
                 val binding =
-                    bind(inflater, R.layout.layout_post_item, parent) as LayoutPostItemBinding
+                    bind(
+                        inflater,
+                        R.layout.layout_post_item,
+                        parent,
+                        false,
+                        lifecycle
+                    ) as LayoutPostItemBinding
                 PostViewHolder(binding, postListener)
             }
             ViewType.LOADING.ordinal -> {
                 val binding =
-                    bind(inflater, R.layout.layout_loading_item, parent) as LayoutLoadingItemBinding
+                    bind(
+                        inflater,
+                        R.layout.layout_loading_item,
+                        parent,
+                        false,
+                        lifecycle
+                    ) as LayoutLoadingItemBinding
                 LoadingViewHolder(binding)
             }
             else -> throw IllegalStateException()

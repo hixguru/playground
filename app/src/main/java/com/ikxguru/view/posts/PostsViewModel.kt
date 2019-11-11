@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
-import androidx.lifecycle.viewModelScope
 import com.ikxguru.data.Post
 import com.ikxguru.ext.doOn
 import com.ikxguru.repo.Repo
@@ -12,11 +11,6 @@ import com.ikxguru.view.posts.PostsViewModel.State
 import com.ikxguru.view.posts.PostsViewModel.State.Failure
 import com.ikxguru.view.posts.PostsViewModel.State.Success
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.channels.ConflatedBroadcastChannel
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.launch
 
 class PostsViewModel(
     private val repo: Repo
@@ -51,16 +45,6 @@ class PostsViewModel(
     private val _onClickPost = MutableLiveData<Post>()
     val onClickPost: LiveData<Post>
         get() = _onClickPost
-    private val onClickPostChannel = ConflatedBroadcastChannel<Post>()
-
-    init {
-        viewModelScope.launch {
-            onClickPostChannel
-                .asFlow()
-                .debounce(500L)
-                .collect { _onClickPost.postValue(it) }
-        }
-    }
 
     fun loadInitialPosts() {
         fetchPosts()
@@ -90,9 +74,7 @@ class PostsViewModel(
     }
 
     fun onClickPost(post: Post) {
-        viewModelScope.launch {
-            onClickPostChannel.send(post)
-        }
+        _onClickPost.postValue(post)
     }
 
     fun loadMore() {

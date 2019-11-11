@@ -3,8 +3,11 @@ package com.ikxguru.util
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Lifecycle
+import com.ikxguru.base.LifecycleComponent
 import com.squareup.moshi.Moshi
 
 val moshi = Moshi.Builder().build()
@@ -17,7 +20,9 @@ fun <T : ViewDataBinding> bind(
     inflater: LayoutInflater,
     @LayoutRes layoutId: Int,
     parent: ViewGroup? = null,
-    attachToRoot: Boolean = false
+    attachToRoot: Boolean = false,
+    lifecycle: Lifecycle? = null
 ): T {
-    return DataBindingUtil.inflate(inflater, layoutId, parent, attachToRoot)
+    val bindingComponent: DataBindingComponent? = lifecycle?.run { LifecycleComponent(this) }
+    return DataBindingUtil.inflate(inflater, layoutId, parent, attachToRoot, bindingComponent)
 }
