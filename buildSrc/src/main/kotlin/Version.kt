@@ -17,6 +17,7 @@ object Version {
 
     const val rxAndroid = "2.1.1"
     const val rxJava = "2.2.13"
+    const val rxBinding = "3.0.0"
 
     const val junit = "4.12"
     const val kluent = "1.4"

@@ -68,6 +68,7 @@ dependencies {
 
     implementation(Dependencies.rxJava)
     implementation(Dependencies.rxAndroid)
+    implementation(Dependencies.rxBinding)
 
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttpInterceptor)
