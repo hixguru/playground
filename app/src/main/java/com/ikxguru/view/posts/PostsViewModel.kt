@@ -4,17 +4,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
+import com.ikxguru.base.LiveEvent
 import com.ikxguru.data.Post
 import com.ikxguru.ext.doOn
 import com.ikxguru.repo.Repo
 import com.ikxguru.view.posts.PostsViewModel.State
 import com.ikxguru.view.posts.PostsViewModel.State.Failure
 import com.ikxguru.view.posts.PostsViewModel.State.Success
+import com.ikxguru.view.posts.PostsViewModel.ViewCommand.ShowPostDetail
 import kotlinx.coroutines.Dispatchers.IO
 
 class PostsViewModel(
     private val repo: Repo
 ) : ViewModel() {
+
+    sealed class ViewCommand {
+        data class ShowPostDetail(val post: Post) : ViewCommand()
+    }
 
     sealed class State {
         data class Success(
@@ -40,11 +46,7 @@ class PostsViewModel(
         get() = state.map { it.failureOrNull() }
     val isLoading
         get() = state.map { it.successOrNull()?.loading }
-
-    // view event
-    private val _onClickPost = MutableLiveData<Post>()
-    val onClickPost: LiveData<Post>
-        get() = _onClickPost
+    val viewCommand = LiveEvent<ViewCommand>()
 
     fun loadInitialPosts() {
         fetchPosts()
@@ -74,7 +76,7 @@ class PostsViewModel(
     }
 
     fun onClickPost(post: Post) {
-        _onClickPost.postValue(post)
+        viewCommand.value = ShowPostDetail(post)
     }
 
     fun loadMore() {

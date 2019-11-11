@@ -15,6 +15,7 @@ import com.ikxguru.ext.observe
 import com.ikxguru.ext.start
 import com.ikxguru.ext.toast
 import com.ikxguru.view.detail.DetailActivity
+import com.ikxguru.view.posts.PostsViewModel.ViewCommand.ShowPostDetail
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostListener {
@@ -39,10 +40,16 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
     }
 
     private fun observeViewEvents() {
-        observe(vm.onClickPost) { post ->
-            val bundle = bundleOf(KEY_POST to post)
-            start(DetailActivity::class, bundle)
+        observe(vm.viewCommand) { command ->
+            when (command) {
+                is ShowPostDetail -> showPostDetail(command)
+                else -> Unit
+            }
         }
+    }
+
+    private fun showPostDetail(command: ShowPostDetail) {
+        start(DetailActivity::class, bundleOf(KEY_POST to command.post))
     }
 
     private fun initView() {
