@@ -10,10 +10,12 @@ import androidx.lifecycle.Lifecycle
 import com.ikxguru.base.LifecycleComponent
 import com.squareup.moshi.Moshi
 
-val moshi = Moshi.Builder().build()
+val moshi = Moshi
+    .Builder()
+    .build()
 
-fun <T> Moshi.fromJson(cls: Class<T>, json: String): T? {
-    return moshi.adapter<T>(cls::class.java).fromJson(json)
+fun <T> fromJson(cls: Class<T>, json: String): T? {
+    return moshi.adapter<T>(cls::class.java).nullSafe().fromJson(json)
 }
 
 fun <T : ViewDataBinding> bind(

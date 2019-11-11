@@ -3,7 +3,6 @@ package com.ikxguru.ext
 import com.ikxguru.base.ErrorResponse
 import com.ikxguru.base.Result
 import com.ikxguru.util.fromJson
-import com.ikxguru.util.moshi
 import retrofit2.Response
 
 fun <T> Response<T>.toResult(): Result<T> {
@@ -19,6 +18,6 @@ fun <T> Response<T>.toResult(): Result<T> {
 
 fun <T> Response<T>.toErrorResponse(): ErrorResponse {
     return errorBody()?.use { responseBody ->
-        moshi.fromJson(ErrorResponse::class.java, responseBody.string())
+        fromJson(ErrorResponse::class.java, responseBody.string())
     } ?: ErrorResponse.NO_BODY
 }
