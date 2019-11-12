@@ -29,27 +29,31 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
         super.onCreate(savedInstanceState)
         initView()
 
-        loadInitialData()
+        if (savedInstanceState == null) {
+            loadInitialData()
+        }
         observe(vm.isLoading, adapter::setLoading)
         observeViewEvents()
         observeError()
     }
 
     private fun loadInitialData() {
-        lifecycleScope.launchWhenCreated { vm.loadInitialPosts() }
+        lifecycleScope.launchWhenCreated {
+            vm.loadInitialPosts()
+        }
     }
 
     private fun observeViewEvents() {
         observe(vm.viewCommand) { command ->
             when (command) {
-                is ShowPostDetail -> showPostDetail(command)
+                is ShowPostDetail -> showPostDetail(command.post)
                 else -> Unit
             }
         }
     }
 
-    private fun showPostDetail(command: ShowPostDetail) {
-        start(DetailActivity::class, bundleOf(KEY_POST to command.post))
+    private fun showPostDetail(post: Post) {
+        start(DetailActivity::class, bundleOf(KEY_POST to post))
     }
 
     private fun initView() {
