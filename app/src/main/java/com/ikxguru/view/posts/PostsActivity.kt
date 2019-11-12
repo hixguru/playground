@@ -3,7 +3,6 @@ package com.ikxguru.view.posts
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.ikxguru.R
@@ -11,6 +10,7 @@ import com.ikxguru.base.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityPostsBinding
+import com.ikxguru.ext.didReachLastItem
 import com.ikxguru.ext.observe
 import com.ikxguru.ext.start
 import com.ikxguru.ext.toast
@@ -60,12 +60,7 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
             rvPosts.addOnScrollListener(object : OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     if (dy <= 0) return
-                    val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
-                    val visibleItemCount = lm.childCount
-                    val totalItemCount = lm.itemCount
-                    val pastVisibleItems = lm.findFirstVisibleItemPosition()
-                    val shouldLoadMore =
-                        visibleItemCount + pastVisibleItems >= totalItemCount
+                    val shouldLoadMore = recyclerView.didReachLastItem()
                     if (shouldLoadMore) this@PostsActivity.vm.loadMore()
                 }
             })
