@@ -3,7 +3,7 @@ package com.ikxguru.ext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-fun RecyclerView.didReachLastItem(): Boolean {
+fun RecyclerView.reachLastItem(): Boolean {
     val lm = layoutManager as? LinearLayoutManager ?: return false
     val visibleItemCount = lm.childCount
     val totalItemCount = lm.itemCount

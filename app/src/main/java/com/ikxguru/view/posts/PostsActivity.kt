@@ -10,8 +10,8 @@ import com.ikxguru.base.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityPostsBinding
-import com.ikxguru.ext.didReachLastItem
 import com.ikxguru.ext.observe
+import com.ikxguru.ext.reachLastItem
 import com.ikxguru.ext.start
 import com.ikxguru.ext.toast
 import com.ikxguru.view.detail.DetailActivity
@@ -60,7 +60,7 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
             rvPosts.addOnScrollListener(object : OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     if (dy <= 0) return
-                    val shouldLoadMore = recyclerView.didReachLastItem()
+                    val shouldLoadMore = recyclerView.reachLastItem()
                     if (shouldLoadMore) this@PostsActivity.vm.loadMore()
                 }
             })
