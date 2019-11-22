@@ -14,6 +14,8 @@ object Version {
 
     const val lifecycle = "2.2.0-rc01"
     const val liveDataKtx = "1.1.1"
+    const val fragmentKtx = "1.2.0-rc02"
+    const val activityKtx = "1.0.0"
 
     const val rxAndroid = "2.1.1"
     const val rxJava = "2.2.13"

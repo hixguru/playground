@@ -65,6 +65,8 @@ dependencies {
     implementation(Dependencies.Lifecycle.liveDataKtx)
     implementation(Dependencies.Lifecycle.runtime)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Lifecycle.activityKtx)
+    implementation(Dependencies.Lifecycle.fragmentKtx)
 
     implementation(Dependencies.rxJava)
     implementation(Dependencies.rxAndroid)

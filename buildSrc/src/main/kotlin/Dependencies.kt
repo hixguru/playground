@@ -24,6 +24,8 @@ object Dependencies {
         const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
         const val runtime = "androidx.lifecycle:lifecycle-runtime:${Version.lifecycle}"
         const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}"
+        const val activityKtx = "androidx.activity:activity-ktx:${Version.activityKtx}"
+        const val fragmentKtx = "androidx.fragment:fragment-ktx:${Version.fragmentKtx}"
     }
 
     const val rxJava = "io.reactivex.rxjava2:rxjava:${Version.rxJava}"
