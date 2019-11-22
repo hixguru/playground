@@ -13,6 +13,8 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>() {
 
     override fun getLayoutId(): Int = R.layout.activity_detail
 
+    override fun inject() = Unit
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.post = this@DetailActivity.post

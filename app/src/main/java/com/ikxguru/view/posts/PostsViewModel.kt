@@ -13,8 +13,9 @@ import com.ikxguru.view.posts.PostsViewModel.State.Failure
 import com.ikxguru.view.posts.PostsViewModel.State.Success
 import com.ikxguru.view.posts.PostsViewModel.ViewCommand.ShowPostDetail
 import kotlinx.coroutines.Dispatchers.IO
+import javax.inject.Inject
 
-class PostsViewModel(
+class PostsViewModel @Inject constructor(
     private val repo: Repo
 ) : ViewModel() {
 

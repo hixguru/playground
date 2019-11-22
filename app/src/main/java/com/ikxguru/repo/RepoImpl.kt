@@ -4,8 +4,9 @@ import com.ikxguru.base.Result
 import com.ikxguru.data.Post
 import com.ikxguru.ext.toResult
 import com.ikxguru.remote.Remote
+import javax.inject.Inject
 
-class RepoImpl(
+class RepoImpl @Inject constructor(
     private val remote: Remote
 ) : Repo {
 
