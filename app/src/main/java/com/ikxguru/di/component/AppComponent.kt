@@ -4,7 +4,6 @@ import android.content.Context
 import com.ikxguru.di.module.ApiModule
 import com.ikxguru.di.module.AppModuleBinds
 import com.ikxguru.di.module.AppSubcomponents
-import com.ikxguru.di.module.ViewModelModule
 import com.ikxguru.view.posts.di.PostsComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -15,8 +14,7 @@ import javax.inject.Singleton
     modules = [
         ApiModule::class,
         AppModuleBinds::class,
-        AppSubcomponents::class,
-        ViewModelModule::class
+        AppSubcomponents::class
     ]
 )
 interface AppComponent {
