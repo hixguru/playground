@@ -12,6 +12,8 @@ object Dependencies {
     const val koinScope = "org.koin:koin-android-scope:${Version.koin}"
     const val koinViewModel = "org.koin:koin-android-viewmodel:${Version.koin}"
     const val koinExt = "org.koin:koin-android-ext:${Version.koin}"
+    const val dagger = "com.google.dagger:dagger:${Version.dagger}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
 
     object Lifecycle {
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Version.lifecycle}"

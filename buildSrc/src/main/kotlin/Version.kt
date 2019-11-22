@@ -22,4 +22,6 @@ object Version {
     const val junit = "4.12"
     const val kluent = "1.4"
     const val mockito = "3.1.0"
+
+    const val dagger = "2.25.2"
 }

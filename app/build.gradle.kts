@@ -80,6 +80,8 @@ dependencies {
     implementation(Dependencies.koinExt)
     implementation(Dependencies.koinScope)
     implementation(Dependencies.koinViewModel)
+    implementation(Dependencies.dagger)
+    kapt(Dependencies.daggerCompiler)
 
     testImplementation(Dependencies.Test.archTesting)
     testImplementation(Dependencies.Test.junit)
