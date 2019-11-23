@@ -10,7 +10,7 @@
 
         <variable
             name="listener"
-            type="com.ikxguru.view.posts.OnClickPostListener" />
+            type="com.ikxguru.view.posts.PostClickListener" />
 
     </data>
 

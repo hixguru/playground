@@ -22,7 +22,7 @@ import com.ikxguru.view.posts.PostsViewModel.ViewCommand.ShowPostDetail
 import com.ikxguru.view.posts.di.PostsComponent
 import javax.inject.Inject
 
-class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostListener {
+class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), PostClickListener {
 
     @Inject lateinit var vmf: ViewModelFactory
     private val vm: PostsViewModel by viewModels { vmf }

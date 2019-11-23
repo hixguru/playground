@@ -6,7 +6,7 @@ import com.ikxguru.databinding.LayoutPostItemBinding
 
 class PostViewHolder(
     binding: LayoutPostItemBinding,
-    private val listener: OnClickPostListener
+    private val listener: PostClickListener
 ) : BaseBindingViewHolder<LayoutPostItemBinding>(binding) {
     fun bind(item: Post) {
         binding.apply {

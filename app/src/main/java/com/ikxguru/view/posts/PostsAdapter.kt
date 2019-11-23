@@ -18,7 +18,7 @@ enum class ViewType(val resId: Int) {
 }
 
 class PostsAdapter(
-    private val postListener: OnClickPostListener,
+    private val postListener: PostClickListener,
     private val lifecycle: Lifecycle
 ) : ListAdapter<Post, ViewHolder>(diffCallback) {
 
