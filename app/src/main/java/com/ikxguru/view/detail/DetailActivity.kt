@@ -6,17 +6,23 @@ import com.ikxguru.base.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityDetailBinding
+import com.ikxguru.ext.viewModel
+import com.ikxguru.injector
+import com.ikxguru.util.IntentDelegate
+import javax.inject.Inject
 
 class DetailActivity : BaseBindingActivity<ActivityDetailBinding>() {
 
-    private val post by lazy { intent?.getParcelableExtra(KEY_POST) ?: Post() }
+    private val post by IntentDelegate<Post>(KEY_POST, Post())
+    @Inject lateinit var vmf: DetailViewModel.Factory
+    private val vm: DetailViewModel by viewModel { vmf.create(post) }
 
     override fun getLayoutId(): Int = R.layout.activity_detail
 
-    override fun inject() = Unit
+    override fun inject() = injector.detailComponent().create().inject(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.post = this@DetailActivity.post
+        binding.post = vm.getPost()
     }
 }

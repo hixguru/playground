@@ -12,7 +12,7 @@ import com.ikxguru.databinding.LayoutLoadingItemBinding
 import com.ikxguru.databinding.LayoutPostItemBinding
 import com.ikxguru.util.bind
 
-enum class ViewType(resId: Int) {
+enum class ViewType(val resId: Int) {
     ITEM(R.layout.layout_post_item),
     LOADING(R.layout.layout_loading_item)
 }
@@ -26,16 +26,16 @@ class PostsAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return if (hasExtraRow() && position == itemCount - 1) {
-            ViewType.LOADING.ordinal
+            ViewType.LOADING.resId
         } else {
-            ViewType.ITEM.ordinal
+            ViewType.ITEM.resId
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
-            ViewType.ITEM.ordinal -> {
+            ViewType.ITEM.resId -> {
                 val binding =
                     bind(
                         inflater,
@@ -46,7 +46,7 @@ class PostsAdapter(
                     ) as LayoutPostItemBinding
                 PostViewHolder(binding, postListener)
             }
-            ViewType.LOADING.ordinal -> {
+            ViewType.LOADING.resId -> {
                 val binding =
                     bind(
                         inflater,

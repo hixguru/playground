@@ -6,7 +6,6 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
-import com.ikxguru.App
 import com.ikxguru.R
 import com.ikxguru.base.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
@@ -17,6 +16,7 @@ import com.ikxguru.ext.observe
 import com.ikxguru.ext.reachLastItem
 import com.ikxguru.ext.start
 import com.ikxguru.ext.toast
+import com.ikxguru.injector
 import com.ikxguru.view.detail.DetailActivity
 import com.ikxguru.view.posts.PostsViewModel.ViewCommand.ShowPostDetail
 import com.ikxguru.view.posts.di.PostsComponent
@@ -32,7 +32,7 @@ class PostsActivity : BaseBindingActivity<ActivityPostsBinding>(), OnClickPostLi
     override fun getLayoutId(): Int = R.layout.activity_posts
 
     override fun inject() {
-        postsComponent = App.appComponent.postsComponent().create().apply {
+        postsComponent = injector.postsComponent().create().apply {
             inject(this@PostsActivity)
         }
     }
