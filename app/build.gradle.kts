@@ -85,6 +85,9 @@ dependencies {
     implementation(Dependencies.dagger)
     kapt(Dependencies.daggerCompiler)
 
+    compileOnly(Dependencies.AssistedInject.annotations)
+    kapt(Dependencies.AssistedInject.processor)
+
     testImplementation(Dependencies.Test.archTesting)
     testImplementation(Dependencies.Test.junit)
     testImplementation(Dependencies.Test.mockito)

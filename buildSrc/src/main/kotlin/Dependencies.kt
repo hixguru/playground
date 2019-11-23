@@ -15,6 +15,12 @@ object Dependencies {
     const val dagger = "com.google.dagger:dagger:${Version.dagger}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
 
+    object AssistedInject {
+        const val annotations =
+            "com.squareup.inject:assisted-inject-annotations-dagger2:${Version.assistedInject}"
+        const val processor = "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
+    }
+
     object Lifecycle {
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel:${Version.lifecycle}"
         const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"

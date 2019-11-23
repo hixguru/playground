@@ -26,4 +26,5 @@ object Version {
     const val mockito = "3.1.0"
 
     const val dagger = "2.25.2"
+    const val assistedInject = "0.5.2"
 }
