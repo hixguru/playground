@@ -6,33 +6,48 @@
     <data>
 
         <variable
-            name="post"
-            type="com.ikxguru.data.Post" />
+            name="vm"
+            type="com.ikxguru.view.detail.DetailViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".view.detail.DetailActivity">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{post.title}"
-            tools:text="Title" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".view.detail.DetailActivity">
 
-        <TextView
-            android:id="@+id/tvBody"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@{post.body}"
-            tools:text="body" />
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{vm.rendered.post.title}"
+                tools:text="Title" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvBody"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{vm.rendered.post.body}"
+                tools:text="body" />
+
+            <TextView
+                android:id="@+id/tvComments"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{vm.rendered.comments}"
+                tools:text="body" />
+
+        </LinearLayout>
+
+    </ScrollView>
 </layout>

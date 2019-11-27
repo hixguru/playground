@@ -9,7 +9,7 @@ data class Post(
     val userId: Int = -1,
     val id: Int = -1,
     @field:Json(name = "title")
-    val _title: String = "",
+    private val _title: String = "",
     val body: String = ""
 ) : Parcelable {
 

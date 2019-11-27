@@ -5,7 +5,7 @@ import com.ikxguru.base.Result
 import com.ikxguru.util.fromJson
 import retrofit2.Response
 
-fun <T> Response<T>.toResult(): Result<T> {
+fun <T> Response<T>.mapResult(): Result<T> {
     val code = code()
     return when {
         isSuccessful -> when (val body = body()) {

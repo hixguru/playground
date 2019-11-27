@@ -6,6 +6,8 @@ import com.ikxguru.base.binding.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityDetailBinding
+import com.ikxguru.ext.observe
+import com.ikxguru.ext.toast
 import com.ikxguru.ext.viewModel
 import com.ikxguru.injector
 import com.ikxguru.util.IntentDelegate
@@ -23,6 +25,13 @@ class DetailActivity : BaseBindingActivity<ActivityDetailBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.post = vm.getPost()
+        binding.vm = this.vm
+        if (savedInstanceState == null) {
+            vm.fetchComments()
+        }
+
+        observe(vm.error) { error ->
+            error?.let { toast(it.message) }
+        }
     }
 }
