@@ -1,16 +1,22 @@
 # playground
-> `일단` 나 혼자 노는 공간
 
-## 사용기술
+## Dependencies
+### DI
+- Dagger(with AssistedInject)
+
+### asynchronous
 - Coroutine
 - RxJava
-- Retrofit(with okhttp)
+
+### Network
+- Retrofit(with okhttp, Moshi)
+
+### ETC
 - AAC(ViewModel, LiveData, Extensions)
-- Moshi
 - Databinding
 
-## 아키텍처
-- MVVM 지향
+## Architecture
+- MVVM
 
 ## Remote API
 - [jsonplaceholder](https://jsonplaceholder.typicode.com/)
