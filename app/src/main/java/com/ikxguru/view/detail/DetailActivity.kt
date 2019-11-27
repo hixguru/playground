@@ -2,7 +2,7 @@ package com.ikxguru.view.detail
 
 import android.os.Bundle
 import com.ikxguru.R
-import com.ikxguru.base.BaseBindingActivity
+import com.ikxguru.base.binding.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityDetailBinding

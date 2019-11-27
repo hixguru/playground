@@ -1,4 +1,4 @@
-package com.ikxguru.base
+package com.ikxguru.base.binding
 
 import android.content.Context
 import android.view.View

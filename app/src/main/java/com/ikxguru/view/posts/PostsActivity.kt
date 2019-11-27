@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.ikxguru.R
-import com.ikxguru.base.BaseBindingActivity
+import com.ikxguru.base.binding.BaseBindingActivity
 import com.ikxguru.constant.KEY_POST
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.ActivityPostsBinding

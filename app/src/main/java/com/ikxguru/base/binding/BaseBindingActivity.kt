@@ -1,4 +1,4 @@
-package com.ikxguru.base
+package com.ikxguru.base.binding
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

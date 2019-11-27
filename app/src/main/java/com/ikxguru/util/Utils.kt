@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle
-import com.ikxguru.base.LifecycleComponent
+import com.ikxguru.base.binding.LifecycleComponent
 import com.squareup.moshi.Moshi
 
 val moshi = Moshi

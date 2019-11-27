@@ -1,4 +1,4 @@
-package com.ikxguru.base
+package com.ikxguru.base.binding
 
 import android.view.View
 import android.view.View.OnClickListener
@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingComponent
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import com.ikxguru.base.binding.ClickBinding
 import com.ikxguru.ext.disposedBy
 import com.jakewharton.rxbinding3.view.clicks
 import io.reactivex.disposables.CompositeDisposable

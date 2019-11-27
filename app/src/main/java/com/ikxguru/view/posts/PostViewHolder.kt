@@ -1,6 +1,6 @@
 package com.ikxguru.view.posts
 
-import com.ikxguru.base.BaseBindingViewHolder
+import com.ikxguru.base.binding.BaseBindingViewHolder
 import com.ikxguru.data.Post
 import com.ikxguru.databinding.LayoutPostItemBinding
 
