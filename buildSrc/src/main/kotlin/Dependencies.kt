@@ -45,7 +45,7 @@ object Dependencies {
         const val retrofit2 = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
         const val converterMoshi =
             "com.squareup.retrofit2:converter-moshi:${Version.retrofit}"
-        const val adapterRxJava = "com.squareup.retrofit2:adapter-rxjava:${Version.retrofit}"
+        const val adapterRxJava = "com.squareup.retrofit2:adapter-rxjava2:${Version.retrofit}"
     }
 
     object Test {
